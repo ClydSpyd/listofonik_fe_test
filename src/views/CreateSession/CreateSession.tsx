@@ -9,7 +9,7 @@ const CreateSession = (props: Props) => {
       className={`${styles.pageContainer} flex-column align-center`}
       variant={"slideRight"}
     >
-      <div className={styles.box}></div>
+      <div className={styles.box}><h1>=)</h1></div>
     </MotionDiv>
   );
 };
