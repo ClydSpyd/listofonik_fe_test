@@ -1,0 +1,117 @@
+@import '../../styles/index.scss';
+
+
+.landingContainer {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+
+  @media (min-width: $phablet) {
+    justify-content: flex-start;
+  }
+}
+
+
+.flare1 {
+  @include flare(400px, 400px, $magenta, #ffffff00);
+  opacity: 0.6;
+  bottom: -240px;
+  left: -50px;
+
+  @media(min-width: $phablet) {
+      width: 1000px;
+      height: 1000px;
+      bottom: -700px;
+      left: 50%;
+      transform: translateX(-30%);
+  }
+}
+
+.flare2 {
+  @include flare(400px, 400px, $purple-deep, #ffffff00);
+  opacity: 0.6;
+  bottom: -240px;
+  right: -50px;
+
+  @media(min-width: $phablet) {
+      width: 1000px;
+      height: 1000px;
+      bottom: -700px;
+      right: 50%;
+      transform: translateX(30%);
+  }
+}
+
+.logoWrapper {
+  width:auto;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  margin-top: 50px;
+  transform: scale(1) translateY(0);
+  transition: ease-out .5s all;
+  
+  &.hide {
+    opacity: 0;
+    height: 170px;
+  }
+  
+
+  @media(max-width:$phablet) {
+    transform: scale(0.75) translateY(-20px);
+  }
+
+  
+@keyframes shrink {
+  to {
+    transform: scale(0.6) translateY(-40px);
+  }
+}
+
+  h1 {
+      font-family: 'Rajdhani', sans-serif;
+      font-family: 'Lobster', sans-serif;
+      font-family: 'Kanit', sans-serif;
+      color: white;
+      margin: 0;
+      font-weight: 300;
+      letter-spacing: 1px;
+      font-size: 4rem;
+      position: relative;
+      margin-top: -20px;
+      
+  };
+  
+  p {
+      margin: 0;
+      position: relative;
+      top: -15px;
+      color: $magenta;
+      font-weight: 400;
+      letter-spacing: 2px;
+      font-size: 1.4rem;
+      font-family: 'Rajdhani', sans-serif;
+  }
+
+  svg {
+    max-height: 120px; 
+    width: 200px;
+  }
+
+  svg.echo {
+      position: absolute;
+      filter: blur(2px);
+      transform: scale(1.8);
+      top: -10px;
+      opacity: .15;
+  }
+}

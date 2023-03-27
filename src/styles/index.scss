@@ -1,0 +1,47 @@
+@import './variables.scss';
+@import './mixins.scss';
+@import './fonts.scss';
+@import './animations.scss';
+
+#root {
+    margin: 0 auto;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    overflow: hidden;
+}
+body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-height: 100vh;
+    line-height: 1.5;
+    font-weight: 400;
+    color:  $grey-black;
+    background-color: $grey-black;
+    font-family: 'Rajdhani', sans-serif;
+    overflow: hidden;
+    position: relative;
+}
+
+.app-wrapper {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .align-center {
+    align-items: center;
+  }

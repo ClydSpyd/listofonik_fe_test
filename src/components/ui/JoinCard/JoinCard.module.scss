@@ -1,0 +1,135 @@
+@import '../../../styles/index.scss';
+
+
+.cardWrapper {
+  box-sizing: border-box;
+  padding: 35px 30px;
+  width: 500px;
+  border-radius: 10px;
+  background-color: $blue-black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  opacity: 1;
+  align-items: center;
+  position: relative;
+  box-shadow: $flareShadowSm;
+
+  h2 {
+    margin: 0;
+    font-weight: 500;
+    font-size: 1.7rem;
+    
+    @media(max-width: $phablet){
+      font-size: 2rem;
+      line-height: 2.2rem;;
+      width: 80vw;
+
+    }
+  }
+
+  &.submit {
+    transition: .4s ease-in-out all, .1s linear opacity;
+    transform: scale(3);
+    opacity: 0;
+    filter: blur(5px);
+  }
+
+  .inputWrapper {
+    width: 100%;
+    position: relative;
+    margin: 35px 0 40px 0;
+
+    input {
+      box-sizing: border-box;
+      position: relative;
+      width: calc(100% - 80px);
+      padding: 15px 10px;
+      outline: none;
+      border-radius: 3px;
+      font-weight: 500;
+      letter-spacing: 1.2px;
+      font-size: 1.4em;
+      transition: 0.3s;
+      z-index: 10;
+      border: 3px solid transparent;
+      background-color: rgba(23, 18, 18, 0.376);
+      box-shadow: $flareShadowSm2;
+      font-family: 'Rajdhani', sans-serif;
+      color: white;
+    }
+
+    p.label {
+      position: absolute;
+      left: 5px;
+      transform: translate(45px, -68px);
+      font-size: 1.3rem;
+      transition: .3s ease-in-out all;
+      top: 50%;
+      transform: translate(45px, -50%);
+      margin: 0;
+      color: white;
+    }
+    
+    p.error {
+      color: $magenta;
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
+    }
+
+    input:focus,
+    input:valid {
+      border: 1px solid $purple-deep;
+      padding: 20px 10px;
+      background-color: rgba(59, 55, 55, 0.376);
+    }
+
+    input:focus~p.label,
+    input:valid~p.label {
+      transform: translate(40px, calc(-100% - 35px));
+      font-size: 1.1rem;
+    }
+
+
+    @media(max-width:$phablet){
+      margin-bottom: 55px;
+
+      p.label {
+        transform: translate(10px, -50%);
+      }
+
+      p.error{
+        font-size: 22px;
+        bottom: -40px;
+        width: 100%;
+      }
+
+      input{
+        width: 100%;
+      }
+
+      input:focus~p.label,
+      input:valid~p.label {
+        transform: translate(10px, calc(-100% - 35px));
+      }
+    }
+  }
+
+  .btnWrapper {
+    width: 300px;
+  }
+
+  @media(max-width: $phablet) {
+    width: 90vw;
+    position: absolute;
+    top: -10px;
+
+    .inputWrapper {
+      width: 100%;
+    }
+  }
+}

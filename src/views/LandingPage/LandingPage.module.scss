@@ -1,0 +1,49 @@
+@import '../../styles/index.scss';
+
+.cardsWrapper {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  margin-top: 100px;
+
+  
+@media (max-width: $phablet) {
+  display: none;
+}
+}
+.buttons {
+  position: relative;
+  bottom: 150px;
+  display: none;
+
+  .btn {
+      @include gradientButton($blue-deep, $magenta);
+      width: 280px;
+      margin-top: 15px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-right: 20px;
+
+      svg {
+          height: 45px;
+          width: 45px;
+          margin-right: 10px;
+          color: white;
+      }
+
+      p {
+          font-size: 35px;
+          text-transform: uppercase;
+          font-weight: 600;
+          font-family: 'Rajdhani', sans-serif;
+          margin: 0;
+          color: white;
+      }
+  }
+
+  @media (max-width: $phablet) {
+      display: initial;
+  }
+}

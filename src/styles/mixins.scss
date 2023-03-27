@@ -1,0 +1,38 @@
+@mixin flare($width, $height, $color1, $color2) {
+    filter: blur(25px);
+    position: absolute;
+    width: $width;
+    height: $height;
+    border-radius: 50%;
+    background: radial-gradient(circle, $color1 0%, $color2 60%);
+}
+
+;
+
+@mixin gradientButton($color1, $color2) {
+    position: relative;
+    padding: 8px 12px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    background-image: radial-gradient(farthest-corner at 80% 150%,
+            $color2 0%,
+            $color1 100%);
+
+    * {
+        position: relative;
+        z-index: 10;
+    }
+
+    .overlay {
+        content: "";
+        position: absolute;
+        height: calc(100% - 4px);
+        width: calc(100% - 4px);
+        top: 2px;
+        left: 2px;
+        border-radius: 15px;
+        opacity: 0.9;
+        background-color: $grey-black;
+        z-index: 0;
+    }
+}

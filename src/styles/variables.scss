@@ -1,0 +1,25 @@
+//colours
+$grey-black:#202128;
+$grey-dark:#313642;
+$grey-mid:#37383eb0;
+
+$purple-deep:#6E2DFF;
+$magenta:#DD0AFE;
+$pink-deep:#EA4C89;
+$peach:#F87577;
+
+$blue-deep:#3060F5;
+$blue-vibrant:#43CDFF;
+$cyan:#13FFFF;
+$blue-black:#272A43;
+
+//breakpoints
+$mobile: 480px;
+$phablet: 760px;
+$laptop: 1024px;
+$desktop: 1200px;
+
+//shadows
+$flareShadow: 0px -3px 25px -10px $magenta, 7px 9px 25px -10px $purple-deep;
+$flareShadowSm: 0px -3px 25px -15px $magenta, 7px 9px 25px -15px $purple-deep;
+$flareShadowSm2: 0px -3px 25px -20px $magenta, 7px 9px 25px -20px $purple-deep;
