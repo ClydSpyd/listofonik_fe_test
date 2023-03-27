@@ -17,6 +17,36 @@ const MotionDiv = ({ className, variant, initial, children }: Props) => {
     getMotionValue();
   }, [width, variant]);
 
+  const variants: {
+    [key in MotionVariant]: { initial: {}; animate: {}; exit: {} };
+  } = {
+    slideLeft: {
+      initial: { x: window.innerWidth },
+      animate: { x: 0 },
+      exit: { x: window.innerWidth },
+    },
+    slideRight: {
+      initial: { x: -window.innerWidth },
+      animate: { x: 0 },
+      exit: { x: -window.innerWidth },
+    },
+    fadeIn: {
+      initial: { opacity: 0 },
+      animate: { opacity: 1 },
+      exit: { opacity: 0 },
+    },
+    noExit: {
+      initial: { opacity: 0 },
+      animate: { opacity: 1 },
+      exit: { },
+    },
+    slideUp: {
+      initial: { y: 100, opacity: 0  },
+      animate: { y: 0, opacity: 1 },
+      exit: { opacity: 0  },
+    },
+  };
+
   const getMotionValue = () => {
     const value =
       variant === "slideLeft" ? window.innerWidth : -window.innerWidth;
@@ -25,20 +55,17 @@ const MotionDiv = ({ className, variant, initial, children }: Props) => {
 
   return !motionValue ? (
     <></>
-  ) :
+  ) : (
     <motion.div
       className={className ?? "motion-div"}
-      transition={{ ease: "easeInOut", duration: 0.5 }}
-      initial={initial === "opacity" ? { opacity: 0 } : { x: motionValue }}
-      animate={initial === "opacity" ? { opacity: 1 } : { x: 0 }}
-      exit={
-        variant !== "noExit"
-          ? { x: motionValue, transition: { duration: 0.5 } }
-          : {}
-      }
+      transition={{ ease: "easeOut", duration: 0.35 }}
+      initial={variants[variant].initial}
+      animate={variants[variant].animate}
+      exit={variants[variant].exit}
     >
       {children}
     </motion.div>
+  );
 };
 
 export default MotionDiv;

@@ -101,6 +101,10 @@
     @media(max-width:$phablet) {}
   }
 
+  .inputWrapper ~ input:focus~p {
+    border: 2px solid red;
+  }
+
   .btnWrapper {
     width: 300px;
   }

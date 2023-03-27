@@ -1,4 +1,4 @@
-import React, { useRef, RefObject } from "react";
+import React, { RefObject } from "react";
 import GradientButton from "../GradientButton/GradientButton";
 import styles from "./JoinCard.module.scss";
 

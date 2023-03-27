@@ -7,7 +7,7 @@ const CreateSession = (props: Props) => {
   return (
     <MotionDiv
       className={`${styles.pageContainer} flex-column align-center`}
-      variant={"slideRight"}
+      variant={"slideUp"}
     >
       <div className={styles.box}><h1>=)</h1></div>
     </MotionDiv>

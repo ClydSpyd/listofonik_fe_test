@@ -6,6 +6,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
 import JoinCard from "../../components/ui/JoinCard/JoinCard";
 import { addAnimation } from "../../utilities/addAnimation";
+import { useQueue } from "../../contexts/QueueContext";
 
 const JoinSession = () => {
   const navigate = useNavigate();
@@ -15,13 +16,13 @@ const JoinSession = () => {
   const [error, setError] = useState<string | null>(null);
   const [input, setInput] = useState<string>("");
   const cardRef = useRef<HTMLDivElement>(null);
-
+  const { queue, setQueue } = useQueue();
   useEffect(() => {
     toggleLoading(!!id);
   }, [id]);
 
   const handleSubmit = () => {
-    if(!input){
+    if (!input) {
       setError("Please enter a code");
       return addAnimation("shakeHoriz", cardRef, 400);
     }
@@ -31,13 +32,22 @@ const JoinSession = () => {
       toggleLoading(true);
       navigate("/join?id=1234");
     }, 50);
-    
+
+    const items = [
+      { title: "hello", thumbnail: "world", id: "666", url: "hello world" },
+    ];
+    setTimeout(() => {
+      setQueue(items);
+    }, 5000);
+    setTimeout(() => {
+      setQueue([...items, ...items, ...items]);
+    }, 8000);
   };
 
   return (
     <MotionDiv
       className={`${styles.pageContainer} flex-column align-center`}
-      variant={"slideLeft"}
+      variant={"slideUp"}
     >
       {!loading ? (
         <JoinCard
@@ -50,6 +60,7 @@ const JoinSession = () => {
         <div className={`${styles.loaderWrapper}`}>
           <LoaderCircleSpin />
           <p>Entering party session...</p>
+          <p>{queue?.length}</p>
         </div>
       )}
     </MotionDiv>

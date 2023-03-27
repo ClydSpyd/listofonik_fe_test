@@ -1,1 +1,1 @@
-declare type MotionVariant = "slideLeft" | "slideRight" | "fadeIn" | "noExit";
+declare type MotionVariant = "slideLeft" | "slideRight" | "fadeIn" | "noExit" | "slideUp";
