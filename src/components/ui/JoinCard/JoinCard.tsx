@@ -26,7 +26,7 @@ const JoinCard = React.forwardRef(
           {error && <p className={`${styles.error}`}>{error}</p>}
         </div>
         <div onClick={callback} className={`${styles.btnWrapper}`}>
-          <GradientButton btnText={"Submit"} />
+          <GradientButton customStyles={{height: "60px"}} btnText={"Submit"} />
         </div>
       </div>
     );

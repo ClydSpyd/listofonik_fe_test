@@ -5,8 +5,7 @@
   box-sizing: border-box;
   padding: 35px 30px;
   width: 500px;
-  border-radius: 10px;
-  background-color: $blue-black;
+  border-radius: 2px;
   color: white;
   display: flex;
   flex-direction: column;
@@ -14,16 +13,17 @@
   opacity: 1;
   align-items: center;
   position: relative;
-  box-shadow: $flareShadowSm;
+  // box-shadow: $flareShadowSm;
+  // box-shadow: 0px -3px 27px 3px #dd0afe38, 7px 9px 25px 2px #6e2dff52;
 
   h2 {
     margin: 0;
     font-weight: 500;
     font-size: 1.7rem;
-    
-    @media(max-width: $phablet){
-      font-size: 2rem;
-      line-height: 2.2rem;;
+
+    @media(max-width: $phablet) {
+      font-size: 1.1rem;
+      line-height: 2.2rem;
       width: 80vw;
 
     }
@@ -54,8 +54,11 @@
       transition: 0.3s;
       z-index: 10;
       border: 3px solid transparent;
-      background-color: rgba(23, 18, 18, 0.376);
-      box-shadow: $flareShadowSm2;
+      background-color: transparent;
+      // border-bottom: 2px solid white;
+      // box-shadow: $flareShadowSm2;
+
+      box-shadow: 0px -3px 27px 3px #dd0afe38, 7px 9px 25px 2px #6e2dff52;
       font-family: 'Rajdhani', sans-serif;
       color: white;
     }
@@ -63,15 +66,15 @@
     p.label {
       position: absolute;
       left: 5px;
-      transform: translate(45px, -68px);
       font-size: 1.3rem;
       transition: .3s ease-in-out all;
       top: 50%;
       transform: translate(45px, -50%);
       margin: 0;
       color: white;
+      opacity: 0.5;
     }
-    
+
     p.error {
       color: $magenta;
       position: absolute;
@@ -84,7 +87,6 @@
     input:focus,
     input:valid {
       border: 1px solid $purple-deep;
-      padding: 20px 10px;
       background-color: rgba(59, 55, 55, 0.376);
     }
 
@@ -92,31 +94,11 @@
     input:valid~p.label {
       transform: translate(40px, calc(-100% - 35px));
       font-size: 1.1rem;
+      opacity: 1;
     }
 
 
-    @media(max-width:$phablet){
-      margin-bottom: 55px;
-
-      p.label {
-        transform: translate(10px, -50%);
-      }
-
-      p.error{
-        font-size: 22px;
-        bottom: -40px;
-        width: 100%;
-      }
-
-      input{
-        width: 100%;
-      }
-
-      input:focus~p.label,
-      input:valid~p.label {
-        transform: translate(10px, calc(-100% - 35px));
-      }
-    }
+    @media(max-width:$phablet) {}
   }
 
   .btnWrapper {
@@ -126,12 +108,37 @@
   @media(max-width: $phablet) {
     width: 90vw;
     position: absolute;
-    top: -10px;
+    top: -20px;
     background-color: transparent;
     box-shadow: none;
 
     .inputWrapper {
       width: 100%;
+      margin-bottom: 35px;
+      transition: 0.3s;
+
+      p.label {
+        transform: translate(10px, -50%);
+      }
+
+      p.error {
+        font-size: 20px;
+        bottom: -155px;
+        width: 100%;
+      }
+
+      input {
+        width: 100%;
+      }
+
+      input:focus~p.label,
+      input:valid~p.label {
+        transform: translate(10px, calc(-100% - 35px));
+      }
+    }
+
+    .btnWrapper {
+      width: 250px;
     }
   }
 }
