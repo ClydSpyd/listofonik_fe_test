@@ -30,7 +30,6 @@ function LandingLayout({}: Props) {
       <Outlet />
       <div className={`${styles.flare1}`} />
       <div className={`${styles.flare2}`} />
-      {/* <div className={`${styles.flare3}`} /> */}
     </div>
   );
 }
