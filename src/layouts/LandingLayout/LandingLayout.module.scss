@@ -25,11 +25,11 @@
   left: -50px;
 
   @media(min-width: $phablet) {
-      width: 1000px;
-      height: 1000px;
-      bottom: -700px;
-      left: 50%;
-      transform: translateX(-30%);
+    width: 1000px;
+    height: 1000px;
+    bottom: -700px;
+    left: 50%;
+    transform: translateX(-30%);
   }
 }
 
@@ -40,16 +40,16 @@
   right: -50px;
 
   @media(min-width: $phablet) {
-      width: 1000px;
-      height: 1000px;
-      bottom: -700px;
-      right: 50%;
-      transform: translateX(30%);
+    width: 1000px;
+    height: 1000px;
+    bottom: -700px;
+    right: 50%;
+    transform: translateX(30%);
   }
 }
 
 .logoWrapper {
-  width:auto;
+  width: auto;
   height: 200px;
   display: flex;
   align-items: center;
@@ -59,59 +59,72 @@
   margin-top: 50px;
   transform: scale(1) translateY(0);
   transition: ease-out .5s all;
-  
+
+  * {
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */
+  }
+
   &.hide {
     opacity: 0;
     height: 170px;
   }
-  
+
 
   @media(max-width:$phablet) {
     transform: scale(0.75) translateY(-20px);
   }
 
-  
-@keyframes shrink {
-  to {
-    transform: scale(0.6) translateY(-40px);
+
+  @keyframes shrink {
+    to {
+      transform: scale(0.6) translateY(-40px);
+    }
   }
-}
 
   h1 {
-      font-family: 'Rajdhani', sans-serif;
-      font-family: 'Lobster', sans-serif;
-      font-family: 'Kanit', sans-serif;
-      color: white;
-      margin: 0;
-      font-weight: 300;
-      letter-spacing: 1px;
-      font-size: 4rem;
-      position: relative;
-      margin-top: -20px;
-      
-  };
-  
+    font-family: 'Rajdhani', sans-serif;
+    font-family: 'Lobster', sans-serif;
+    font-family: 'Kanit', sans-serif;
+    color: white;
+    margin: 0;
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-size: 4rem;
+    position: relative;
+    margin-top: -20px;
+
+  }
+
+  ;
+
   p {
-      margin: 0;
-      position: relative;
-      top: -15px;
-      color: $magenta;
-      font-weight: 400;
-      letter-spacing: 2px;
-      font-size: 1.4rem;
-      font-family: 'Rajdhani', sans-serif;
+    margin: 0;
+    position: relative;
+    top: -15px;
+    color: $magenta;
+    font-weight: 400;
+    letter-spacing: 2px;
+    font-size: 1.4rem;
+    font-family: 'Rajdhani', sans-serif;
   }
 
   svg {
-    max-height: 120px; 
+    max-height: 120px;
     width: 200px;
   }
 
   svg.echo {
-      position: absolute;
-      filter: blur(2px);
-      transform: scale(1.8);
-      top: -10px;
-      opacity: .15;
+    position: absolute;
+    filter: blur(2px);
+    transform: scale(1.8);
+    top: -10px;
+    opacity: .15;
   }
 }
